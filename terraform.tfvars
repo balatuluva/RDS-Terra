@@ -1,5 +1,4 @@
 aws_region = us-east-1
-s3_bucket = balaterraformbucket
 VPC_cidr_block = 192.168.0.0/16
 VPC_Name = RDS-VPC
 azs = ["us-east-1a", "us-east-1b"]

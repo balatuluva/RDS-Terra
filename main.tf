@@ -4,9 +4,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = var.s3_bucket
+    bucket = "balaterraformbucket"
     key    = "rds.tfstate"
-    region = var.aws_region
+    region = "us-east-1"
   }
 }
 

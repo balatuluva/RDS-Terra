@@ -1,5 +1,4 @@
 variable "aws_region" {}
-variable "s3_bucket" {}
 variable "VPC_cidr_block" {}
 variable "VPC_Name" {}
 variable "azs" {}
