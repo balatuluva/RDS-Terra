@@ -130,6 +130,15 @@ resource "aws_security_group" "RDS-SG" {
 #  nat_gateway_id         = aws_nat_gateway.RDS-NAT.id
 #}
 
+resource "aws_db_subnet_group" "RDS-subnet-group" {
+  name       = "RDS-subnet-group"
+  subnet_ids = "subnet-0e5122f43ac79a246"
+
+  tags = {
+    Name = "${var.VPC_Name}-SubnetGroup"
+  }
+}
+
 resource "aws_db_instance" "RDS-Mysql" {
   identifier             = "rds"
   instance_class         = "db.t3.micro"
@@ -138,7 +147,7 @@ resource "aws_db_instance" "RDS-Mysql" {
   engine_version         = "8.0"
   username               = "db_user"
   password               = "Debs12345!"
-  db_subnet_group_name   = data.aws_subnet.RDS-VPC-Public-Subnet.id
+  db_subnet_group_name   = aws_db_subnet_group.RDS-subnet-group.name
   vpc_security_group_ids = [data.aws_security_group.RDS-SG.id]
   #parameter_group_name   = aws_db_parameter_group.education.name
   publicly_accessible    = true
