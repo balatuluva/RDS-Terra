@@ -131,7 +131,7 @@ resource "aws_security_group" "RDS-SG" {
 #}
 
 resource "aws_db_instance" "RDS-Mysql" {
-  identifier             = "RDS-Mysql"
+  identifier             = "rds"
   instance_class         = "db.t3.micro"
   allocated_storage      = 5
   engine                 = "mysql"
