@@ -129,3 +129,18 @@ resource "aws_security_group" "RDS-SG" {
 #  destination_cidr_block = "0.0.0.0/0"
 #  nat_gateway_id         = aws_nat_gateway.RDS-NAT.id
 #}
+
+resource "aws_db_instance" "RDS-Mysql" {
+  identifier             = "RDS-Mysql"
+  instance_class         = "db.t3.micro"
+  allocated_storage      = 5
+  engine                 = "mysql"
+  engine_version         = "8.0"
+  username               = data.aws_ssm_parameter.db_user.value
+  password               = data.aws_ssm_parameter.db_pass.value
+  db_subnet_group_name   = data.aws_subnet.RDS-VPC-Public-Subnet.name
+  vpc_security_group_ids = [data.aws_security_group.RDS-SG.id]
+  #parameter_group_name   = aws_db_parameter_group.education.name
+  publicly_accessible    = true
+  skip_final_snapshot    = true
+}
