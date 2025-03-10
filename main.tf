@@ -136,8 +136,8 @@ resource "aws_db_instance" "RDS-Mysql" {
   allocated_storage      = 5
   engine                 = "mysql"
   engine_version         = "8.0"
-  username               = data.aws_ssm_parameter.db_user.value
-  password               = data.aws_ssm_parameter.db_pass.value
+  username               = "db_user"
+  password               = "Debs12345!"
   db_subnet_group_name   = data.aws_subnet.RDS-VPC-Public-Subnet.id
   vpc_security_group_ids = [data.aws_security_group.RDS-SG.id]
   #parameter_group_name   = aws_db_parameter_group.education.name
