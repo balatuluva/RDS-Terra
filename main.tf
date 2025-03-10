@@ -131,7 +131,7 @@ resource "aws_security_group" "RDS-SG" {
 #}
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "RDS_subnet_group"
+  name       = "rds_subnet_group"
   subnet_ids = ["subnet-0e5122f43ac79a246"]
 
   tags = {
