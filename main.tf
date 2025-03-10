@@ -132,7 +132,7 @@ resource "aws_security_group" "RDS-SG" {
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "rds_subnet_group"
-  subnet_ids = ["subnet-0e5122f43ac79a246"]
+  subnet_ids = ["subnet-0e5122f43ac79a246", "subnet-07475aff794c4dcc0"]
 
   tags = {
     Name = "${var.VPC_Name}-SubnetGroup"
