@@ -1,7 +1,7 @@
 data "aws_subnet" "RDS-VPC-Public-Subnet" {
-  id = "subnet-0e5122f43ac79a246"
+  id = "subnet-035c48b8affd56fef"
 }
 
 data "aws_security_group" "RDS-SG" {
-  id = "sg-014fcecd1612ef337"
+  id = "sg-04020f8ef6ed43e13"
 }
