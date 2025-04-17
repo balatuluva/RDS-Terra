@@ -123,7 +123,7 @@ resource "aws_security_group" "RDS-SG" {
 #    Name = "RDS-NAT-Gateway"
 #  }
 #}
-#
+
 #resource "aws_route" "RDS-Private-NAT-Route" {
 #  route_table_id         = aws_route_table.RDS-Private-RT.id
 #  destination_cidr_block = "0.0.0.0/0"
