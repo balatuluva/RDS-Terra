@@ -148,7 +148,7 @@ resource "aws_db_instance" "RDS-Mysql" {
   username               = "adminuser"
   password               = aws_secretsmanager_secret_version.db_secret_version.secret_string
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
-  vpc_security_group_ids = aws_security_group.RDS-SG.id
+  vpc_security_group_ids = [aws_security_group.RDS-SG.id]
   #parameter_group_name   = aws_db_parameter_group.education.name
   publicly_accessible    = true
   skip_final_snapshot    = true
