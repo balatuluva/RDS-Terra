@@ -132,7 +132,7 @@ resource "aws_security_group" "RDS-SG" {
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "rds_subnet_group"
-  subnet_ids = ["subnet-0d79bf23d43136d6f", "subnet-027e2b43066f0a443"]
+  subnet_ids = aws_subnet.RDS-VPC-Public-Subnet[*].id
 
   tags = {
     Name = "${var.VPC_Name}-SubnetGroup"
